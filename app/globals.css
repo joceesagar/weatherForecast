@@ -2,26 +2,232 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+ :root {
+    /* ===================================
+       Classic Blue & White Theme
+       =================================== */
+    --classic-sky-blue: #87CEEB;       /* Represents clear skies and serenity */
+    --classic-navy-blue: #003366;      /* Strong contrast for text and icons */
+    --classic-white: #FFFFFF;           /* Clean background for readability */
+    --classic-light-gray: #F5F5F5;      /* Subtle elements and separators */
+
+    /* ===================================
+       Sunset Palette Theme
+       =================================== */
+    --sunset-warm-orange: #FF6F61;      /* Evokes warmth and energy */
+    --sunset-deep-purple: #6A1B9A;      /* Adds depth and contrast */
+    --sunset-soft-pink: #FFC1E3;        /* Highlights and subtle details */
+    --sunset-pale-yellow: #FFF9C4;      /* Represents sunshine and brightness */
+
+    /* ===================================
+       Minimalist Neutral Theme
+       =================================== */
+    --minimal-soft-gray: #B0BEC5;       /* Modern and versatile */
+    --minimal-charcoal: #37474F;        /* Strong contrast for text and icons */
+    --minimal-teal: #009688;            /* Fresh and vibrant for highlights */
+    --minimal-coral: #FF7043;           /* Pop of color for important actions */
+
+    /* ===================================
+       Day & Night Modes
+       =================================== */
+    /* Day Mode Colors */
+    --day-light-blue: #87CEFA;          /* Clear sky representation */
+    --day-sunny-yellow: #FFD700;        /* Highlights and accents */
+    --day-white: #FFFFFF;                /* Clean and bright background */
+
+    /* Night Mode Colors */
+    --night-dark-navy: #2C3E50;         /* Deep, calming background */
+    --night-midnight-blue: #34495E;     /* For text and icons */
+    --night-soft-white: #ECF0F1;        /* Readable text against dark backgrounds */
+
+    /* ===================================
+       Nature-Inspired Theme
+       =================================== */
+    --nature-forest-green: #228B22;     /* Represents greenery and freshness */
+    --nature-earth-brown: #8B4513;      /* Adds a grounded feel */
+    --nature-sky-blue: #87CEFA;         /* For weather elements like rain or clouds */
+    --nature-sun-yellow: #FFD700;        /* Highlights sunny conditions */
+
+
+    --font-sans-serif: 'Roboto', sans-serif;
+    --font-display: 'Montserrat', sans-serif;
+    --font-system: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+/* ===================================
+   Theme Classes for Easy Switching
+   =================================== */
+
+/* Classic Blue & White Theme */
+.theme-classic {
+    --primary-color: var(--classic-sky-blue);
+    --secondary-color: var(--classic-navy-blue);
+    --background-color: var(--classic-white);
+    --accent-color: var(--classic-light-gray);
+}
+
+/* Sunset Palette Theme */
+.theme-sunset {
+    --primary-color: var(--sunset-warm-orange);
+    --secondary-color: var(--sunset-deep-purple);
+    --background-color: var(--sunset-soft-pink);
+    --accent-color: var(--sunset-pale-yellow);
+}
+
+/* Minimalist Neutral Theme */
+.theme-minimalist {
+    --primary-color: var(--minimal-soft-gray);
+    --secondary-color: var(--minimal-charcoal);
+    --background-color: var(--minimal-soft-gray);
+    --accent-color: var(--minimal-teal);
+    --action-color: var(--minimal-coral);
+}
+
+/* Day Mode */
+.theme-day {
+    --primary-color: var(--day-light-blue);
+    --secondary-color: var(--day-sunny-yellow);
+    --background-color: var(--day-white);
+}
+
+/* Night Mode */
+.theme-night {
+    --primary-color: var(--night-dark-navy);
+    --secondary-color: var(--night-midnight-blue);
+    --background-color: var(--night-soft-white);
+}
+
+/* Nature-Inspired Theme */
+.theme-nature {
+    --primary-color: var(--nature-forest-green);
+    --secondary-color: var(--nature-earth-brown);
+    --background-color: var(--nature-sky-blue);
+    --accent-color: var(--nature-sun-yellow);
+}
+
+
+
+/*------INTRO PAGE STYLES-------------*/
+.intro{
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#87CEEB, #003366);
+}
+
+.introChild1{
+  height: 50%;
+  width: 60%;
+}
+
+
+.introChild2{
+  height: 40%;
+  width: 40%;
+
+}
+
+.p1{
+  color: var(--classic-navy-blue);
+  font-family: "Crimson Pro", serif;
+  font-size: 120px;
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+.p2{
+  color: #FFFFFF;
+  font-family: "Crimson Pro", serif;
+  font-size: 80px;
+  font-weight: 800;
+  font-style: normal;
+  margin-top: -30px;
+}
+
+.introChild3{
+  height: 40%;
+  width: 40%;
+  margin-top: -100px;
+
+}
+
+.btnStyle_Intro{
+    border-radius: 60px;
+    padding: 50px 60px;
+    color: var(--classic-navy-blue);
+    font-family: "Crimson Pro", serif;
+    font-size: 48px;
+    font-weight: 800;
+    font-style: normal;
+    background: linear-gradient(to right,#F1DF99, #E7C030);
+    border-style: none;
+    width: auto;
+
+}
+
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 46.1%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 10% 3.9%;
+        --chart-1: 12 76% 61%;
+        --chart-2: 173 58% 39%;
+        --chart-3: 197 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+    }
+  .dark {
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+        --accent: 240 3.7% 15.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --ring: 240 4.9% 83.9%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@layer base {
+  * {
+    @apply border-border;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
 }
